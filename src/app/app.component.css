@@ -1,0 +1,30 @@
+* {
+  font-family: system-ui;
+}
+h1 {
+  color: lightpink;
+}
+
+form input {
+  border: 2px solid lightcoral;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: 0;
+}
+
+.id {
+  color: lightblue;
+}
+
+.name {
+  color: lightseagreen;
+}
+
+.pokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
