@@ -1,14 +1,12 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="pokemon">
+<div class="pokemon" *ngIf="pokemon">
   <h1>
     Welcome to Pokemon
   </h1>
   <h1 class="name">{{pokemon.name}}</h1>
-  <img width="100" alt="Angular Logo" src={{pokemon.sprites.front_default}}>
+  <img width="100" [src]="pokemon.sprites.front_default">
   <h1 class="id">{{pokemon.id}}</h1>
-  <form action="" (submit)="HandleSubmit($event)" >
+  <form (submit)="HandleSubmit($event)" >
     <input type="text" placeholder="pokemon id" name="id">
   </form>
 </div>
 
-<router-outlet></router-outlet>

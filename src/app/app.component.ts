@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PokemonService } from './app.service'
+import { Pokemon } from './pokemon.model';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +8,22 @@ import { PokemonService } from './app.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  pokemon: Pokemon;
+  
   constructor(private pokemonService: PokemonService) {
-    this.pokemon = {
-      name: '',
-    }
+
   }
+  
   showPokemon(id) {
-    this.pokemonService.getPokemon(id)
-      .subscribe((data) => {
-        console.log(data)
-        return this.pokemon = data
-      });
+    this.pokemonService
+    .getPokemon(id)
+      .subscribe(
+        (data: Pokemon) => {
+          this.pokemon = data
+          console.log(this.pokemon)
+        });
   }
+
   HandleSubmit(event) {
     event.preventDefault()
     const form = new FormData(event.target)
